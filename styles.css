@@ -5,41 +5,19 @@
 }
 
 body {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: center;
   justify-content: center;
-  vertical-align: center;
   flex-wrap: wrap;
   align-content: center;
-
   color: #2a2b2c;
   background-color: #ebedee;
-}
-
-img {
-  width: auto;
-  max-width: 100%;
 }
 
 .card {
   background-color: transparent;
   width: 768px;
   margin: auto; /* 使卡片居中 */
-}
-
-.form-control {
-  cursor: auto;
-}
-
-.img-thumbnail {
-  max-height: 320px;
-}
-
-.list-group-item {
-  font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 @media (max-width: 769px) {
