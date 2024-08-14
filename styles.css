@@ -27,6 +27,7 @@ img {
 .card {
   background-color: transparent;
   width: 768px;
+  overflow-x: auto; /* 允许横向滚动以防内容溢出 */
 }
 
 .form-control {
@@ -50,7 +51,8 @@ img {
 
 @media (max-width: 420px) {
   .card {
-    width: 95%;
+    width: 100%; /* 确保在更小的屏幕上也适应宽度 */
+    margin: 10px;
   }
 }
 
