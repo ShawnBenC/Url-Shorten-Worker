@@ -19,7 +19,7 @@ body {
 .card {
   background-color: transparent;
   width: 768px;
-  margin: 10px auto; /* 保证每个卡片水平居中并有一定的上下间距 */
+  margin: 10px 15%; /* 设置左右的间距为15% */
 }
 
 .form-control {
@@ -37,12 +37,14 @@ body {
 @media (max-width: 769px) {
   .card {
     width: 80%;
+    margin: 10px 10%; /* 移动设备上的左右间距为10% */
   }
 }
 
 @media (max-width: 420px) {
   .card {
     width: 95%;
+    margin: 10px auto; /* 确保在更小的屏幕上居中 */
   }
 }
 
