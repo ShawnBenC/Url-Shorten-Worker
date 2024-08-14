@@ -5,21 +5,28 @@
 }
 
 body {
+  display: -webkit-box;
   display: flex;
-  justify-content: center; /* 水平居中 */
-  align-items: center; /* 垂直居中 */
-  min-height: 100vh; /* 确保内容占满整个视窗高度 */
-  margin: 0;
-  padding: 0;
-  background-color: #ebedee;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  vertical-align: center;
+  flex-wrap: wrap;
+  align-content: center;
+
   color: #2a2b2c;
-  flex-direction: column; /* 使多卡片垂直堆叠 */
+  background-color: #ebedee;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
 }
 
 .card {
   background-color: transparent;
   width: 768px;
-  margin: 10px 15%; /* 设置左右的间距为15% */
 }
 
 .form-control {
@@ -36,24 +43,23 @@ body {
 
 @media (max-width: 769px) {
   .card {
-    width: 80%;
-    margin: 10px 10%; /* 移动设备上的左右间距为10% */
+    width: 100%; /* 调整为100%以确保卡片宽度适应视口 */
+    margin: 10px; /* 确保卡片在视口中有间距 */
   }
 }
 
 @media (max-width: 420px) {
   .card {
     width: 95%;
-    margin: 10px auto; /* 确保在更小的屏幕上居中 */
   }
 }
 
 @media (prefers-color-scheme: dark) { 
   body {
     color: #d9d9d9; 
-    background: #1b1b1b;
+    background: #1b1b1b; /* 背景色设置为深色 */
   }
   .card {
-    background-color: #FF7900;
+    background-color: #FF7900; /* 卡片背景色设置为 KTM 摩托车橙色 */
   }
 }
