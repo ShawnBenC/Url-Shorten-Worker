@@ -20,7 +20,7 @@ function shorturl() {
   document.getElementById('keyPhrase').value = document.getElementById('keyPhrase').value.replace(/\s/g, "-");
 
   document.getElementById("addBtn").disabled = true;
-  document.getElementById("addBtn").innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>请稍等...';
+  document.getElementById("addBtn").innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
   fetch(apiSrv, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -30,7 +30,7 @@ function shorturl() {
   }).then(function (myJson) {
     res = myJson;
     document.getElementById("addBtn").disabled = false;
-    document.getElementById("addBtn").innerHTML = '点击生成';
+    document.getElementById("addBtn").innerHTML = 'Shorten it';
 
     // 成功生成短链 Succeed
     if (res.status == "200") {
@@ -54,7 +54,7 @@ function shorturl() {
     alert("Unknow error. Please retry!");
     console.log(err);
     document.getElementById("addBtn").disabled = false;
-    document.getElementById("addBtn").innerHTML = '点击生成';
+    document.getElementById("addBtn").innerHTML = 'Shorten it';
   })
 }
 
@@ -204,7 +204,7 @@ function deleteShortUrl(delKeyPhrase) {
       // 加载localStorage
       loadUrlList()
 
-      document.getElementById("result").innerHTML = "删除成功"
+      document.getElementById("result").innerHTML = "Delete Successful"
     } else {
       document.getElementById("result").innerHTML = res.error;
     }
