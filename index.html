@@ -12,69 +12,66 @@
 </head>
 <body>
   <div class="d-flex align-items-start flex-wrap">
-  <div class="card shadow m-3">
-    <h5 class="card-header">肖恩の短链</h5>
-    <div class="card-body">
-      <h5 class="card-title"> </h5>
+    <div class="card shadow m-3">
+      <h5 class="card-header">肖恩の短链</h5>
+      <div class="card-body">
+        <h5 class="card-title"> </h5>
 
-      <div class="input-group mb-3">
-
+        <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1">长链</span>
+          <input type="text" class="form-control" id="longURL" aria-describedby="basic-addon1" placeholder="例如: https://example.com/" oninput="loadUrlList()">
+        </div>
 
-        <input type="text" class="form-control" id="longURL" aria-describedby="basic-addon1" placeholder="例如: https://example.com/" oninput="loadUrlList()">
-      </div>
-
-      <div class="input-group mb-3">
-
+        <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon2">自定义短链</span>
+          <input type="text" class="form-control" id="keyPhrase" aria-describedby="basic-addon2" placeholder="请输入后缀 为空则随机后缀">
+        </div>
 
-        <input type="text" class="form-control" id="keyPhrase" aria-describedby="basic-addon2" placeholder="请输入后缀 为空则随机后缀">
-      </div>
+        <div class="input-group mb-3">
+          <button class="btn btn-primary" type="button" onclick='shorturl()' id="addBtn">点击生成</button>
+        </div>
 
-      <div class="input-group mb-3">
-        <button class="btn btn-primary" type="button" onclick='shorturl()' id="addBtn">点击生成</button>
-      </div>
-
-      <div class="input-group mb-3">
-
+        <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon3">密码</span>
-
-        <input class="form-control" type="text" value="__PASSWORD__" readonly="true" id="passwordText" aria-describedby="basic-addon3">
+          <input class="form-control" type="text" value="__PASSWORD__" readonly="true" id="passwordText" aria-describedby="basic-addon3">
+        </div>
       </div>
 
-    </div>
-    
-    <div class="card-footer">
-      <span> <a href="https://github.com/crazypeace/Url-Shorten-Worker/" target="_self">Author's GitHub Project</a> </span>
-    </div>
-  </div>
-
-  <div class="card shadow m-3">
-    <h5 class="card-header">本地储存列表</h5>
-    <div class="card-body">
-      <h5 class="card-title"> </h5>
-      <div class="input-group mb-3">
-        <button class="btn btn-success" type="button" onclick='loadUrlList()' id="loadListBtn">加载本地储存</button>
-        <button class="btn btn-danger" type="button" onclick='clearLocalStorage()' id="clearlocalStgBtn">清除本地储存</button>
-        <button class="btn btn-info" type="button" onclick='loadKV()' id="loadKV2localStgBtn">加载KV到本地储存</button>
+      <div class="card-footer">
+        <span><a href="https://github.com/crazypeace/Url-Shorten-Worker/" target="_self">Author's GitHub Project</a></span>
       </div>
+    </div>
 
-      <div class="card-text">
-        <div classs="list-group" id="urlList">
-          <div class="mb-3 list-group-item">
-            <div class="input-group">
-              <button type="button" class="btn btn-danger" onclick='deleteShortUrl("4sure")' id="delBtn-4sure">X</button>
-              <button type="button" class="btn btn-info" onclick='queryVisitCount("4sure")' id="qryCntBtn-4sure">?</button>
-              <span class="form-control">https://1way.eu.org/4sure</span>
-            </div>
-            <div class="form-control">
-              https://en.y2mate.is/s36/youtube-to-mp3.html
+    <div class="card shadow m-3">
+      <h5 class="card-header">本地储存列表</h5>
+      <div class="card-body">
+        <h5 class="card-title"> </h5>
+        <div class="input-group mb-3">
+          <button class="btn btn-success" type="button" onclick='loadUrlList()' id="loadListBtn">加载本地储存</button>
+          <button class="btn btn-danger" type="button" onclick='clearLocalStorage()' id="clearlocalStgBtn">清除本地储存</button>
+          <button class="btn btn-info" type="button" onclick='loadKV()' id="loadKV2localStgBtn">加载KV到本地储存</button>
+        </div>
+
+        <div class="card-text">
+          <div class="list-group" id="urlList">
+            <div class="mb-3 list-group-item">
+              <div class="input-group">
+                <button type="button" class="btn btn-danger" onclick='deleteShortUrl("4sure")' id="delBtn-4sure">X</button>
+                <button type="button" class="btn btn-info" onclick='queryVisitCount("4sure")' id="qryCntBtn-4sure">?</button>
+                <!-- 保持文本的自动换行效果 -->
+                <span class="form-control" style="word-wrap: break-word; overflow-wrap: break-word; white-space: normal;">
+                  https://1way.eu.org/4sure
+                </span>
+              </div>
+              <!-- 这里同样保持自动换行效果 -->
+              <div class="form-control" style="word-wrap: break-word; overflow-wrap: break-word; white-space: normal;">
+                https://en.y2mate.is/s36/youtube-to-mp3.html
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
