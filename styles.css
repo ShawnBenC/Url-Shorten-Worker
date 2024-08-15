@@ -1,3 +1,4 @@
+/* 取消默认的 margin 和 padding */
 * {
   margin: 0;
   padding: 0;
@@ -8,11 +9,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* 使背景覆盖整个视口高度 */
-  text-align: center; /* 使内容在水平方向居中 */
+  flex-wrap: wrap;
   color: #2a2b2c;
   background-color: #ebedee;
-  background-size: cover; /* 确保背景图片适应视口 */
+  height: 100vh; /* 确保 body 高度覆盖视口高度 */
+  margin: 0;
 }
 
 img {
@@ -23,8 +24,8 @@ img {
 .card {
   background-color: transparent;
   width: 768px;
-  margin: auto; /* 确保卡片水平居中 */
   overflow-x: auto; /* 允许横向滚动以防内容溢出 */
+  margin: 10px; /* 确保卡片在视口中有间距 */
 }
 
 .form-control {
@@ -37,6 +38,9 @@ img {
 
 .list-group-item {
   font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
+  word-wrap: break-word; /* 保证兼容性 */
+  overflow-wrap: break-word; /* 标准属性，自动换行 */
+  white-space: normal; /* 确保文本可以换行 */
 }
 
 @media (max-width: 769px) {
@@ -53,9 +57,9 @@ img {
   }
 }
 
-@media (prefers-color-scheme: dark) { 
+@media (prefers-color-scheme: dark) {
   body {
-    color: #d9d9d9; 
+    color: #d9d9d9;
     background: #1b1b1b; /* 背景色设置为深色 */
   }
   .card {
