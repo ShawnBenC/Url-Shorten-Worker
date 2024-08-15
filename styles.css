@@ -5,18 +5,14 @@
 }
 
 body {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: center;
   justify-content: center;
-  vertical-align: center;
-  flex-wrap: wrap;
-  align-content: center;
-
+  min-height: 100vh; /* 使背景覆盖整个视口高度 */
+  text-align: center; /* 使内容在水平方向居中 */
   color: #2a2b2c;
   background-color: #ebedee;
+  background-size: cover; /* 确保背景图片适应视口 */
 }
 
 img {
@@ -27,6 +23,7 @@ img {
 .card {
   background-color: transparent;
   width: 768px;
+  margin: auto; /* 确保卡片水平居中 */
   overflow-x: auto; /* 允许横向滚动以防内容溢出 */
 }
 
@@ -40,8 +37,6 @@ img {
 
 .list-group-item {
   font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
-  word-wrap: break-word; /* 保证兼容性 */
-  overflow-wrap: break-word; /* 标准属性，自动换行 */
 }
 
 @media (max-width: 769px) {
